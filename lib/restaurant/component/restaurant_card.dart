@@ -1,5 +1,6 @@
 import 'package:code_factory_middle/common/const/colors.dart';
 import 'package:code_factory_middle/common/const/data.dart';
+import 'package:code_factory_middle/product/component/product_card.dart';
 import 'package:code_factory_middle/restaurant/model/restaurant_model.dart';
 import 'package:flutter/material.dart';
 
@@ -136,6 +137,10 @@ class RestaurantCard extends StatelessWidget {
                   ),
               ],
             ),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: ProductCard(),
           ),
         ],
       ),
