@@ -39,8 +39,8 @@ class RestaurantScreen extends StatelessWidget {
               return ListView.separated(
                 itemBuilder: (BuildContext context, int index) {
                   final item = snapshot.data![index];
-                  final pItem = RestaurantModel.fromJson(
-                      json: item); //factory constructor 이용
+                  final pItem =
+                      RestaurantModel.fromJson(item); //factory constructor 이용
                   // parsed item 이라는 의미로 pItem이름을 사용
                   // final pItem = RestaurantModel(
                   //   id: item['id'],
