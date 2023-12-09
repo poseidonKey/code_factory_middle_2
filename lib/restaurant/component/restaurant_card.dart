@@ -1,6 +1,6 @@
 import 'package:code_factory_middle/common/const/colors.dart';
 import 'package:code_factory_middle/common/const/data.dart';
-import 'package:code_factory_middle/product/component/product_card.dart';
+import 'package:code_factory_middle/restaurant/model/restaurant_detail_model.dart';
 import 'package:code_factory_middle/restaurant/model/restaurant_model.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +54,7 @@ class RestaurantCard extends StatelessWidget {
   }) {
     return RestaurantCard(
       image: Image.network(
-        'http://$ip/${model.thumbUrl}',
+        'http://$ip${model.thumbUrl}',
         fit: BoxFit.cover,
       ),
       name: model.name,
@@ -64,6 +64,7 @@ class RestaurantCard extends StatelessWidget {
       deliveryFee: model.deliveryFee,
       ratings: model.ratings,
       isDetail: isDetail,
+      detail: model is RestaurantDetailModel ? model.detail : null,
     );
   }
 
@@ -137,10 +138,6 @@ class RestaurantCard extends StatelessWidget {
                   ),
               ],
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: ProductCard(),
           ),
         ],
       ),

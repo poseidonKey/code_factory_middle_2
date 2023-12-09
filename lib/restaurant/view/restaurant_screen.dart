@@ -28,11 +28,13 @@ class RestaurantScreen extends StatelessWidget {
           child: FutureBuilder<List>(
             future: paginateRestaurant(),
             builder: (context, AsyncSnapshot<List> snapshot) {
-              print(snapshot.data);
-              print(snapshot.error); // error 원인 파악 401 에러.
+              // print(snapshot.data);
+              // print(snapshot.error); // error 원인 파악 401 에러.
               // accessToken 유효시간 5분이기 때문.
               if (!snapshot.hasData) {
-                return Container();
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
               }
               return ListView.separated(
                 itemBuilder: (BuildContext context, int index) {
@@ -57,7 +59,8 @@ class RestaurantScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (_) => const RestaurantDetailScreen(),
+                            builder: (_) =>
+                                RestaurantDetailScreen(id: pItem.id),
                           ),
                         );
                       },
