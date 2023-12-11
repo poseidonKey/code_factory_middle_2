@@ -1,4 +1,3 @@
-import 'package:code_factory_middle/common/const/data.dart';
 import 'package:json_annotation/json_annotation.dart';
 part 'restaurant_model.g.dart';
 
